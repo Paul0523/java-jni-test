@@ -11,7 +11,7 @@ public class HelloWorld{
             //设置查找路径为当前项目路径,注意直接设置java.library.path属性无效
             addDir("/Users/fangzhipeng/Documents/workspace-idea/java-jni-test/lib");
             //加载动态库的名称
-            System.loadLibrary("hello");
+            System.loadLibrary("JAVA_JNI3");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -19,7 +19,9 @@ public class HelloWorld{
     }
 
     public static void main(String[] args){
+        long time = System.currentTimeMillis();
         new HelloWorld().hello();
+        System.out.println((System.currentTimeMillis() - time));
     }
 
     public static void addDir(String s) throws IOException {
